@@ -1,8 +1,9 @@
 module.exports = {
   Test: function(browser) {
-    const google = browser.page.google();
+    const step1 = browser.page.step1();
+    const step2 = browser.page.step2();
 
-    google
+    step1
       .navigate()
       .assert.title("Google")
       .assert.visible("@searchBar")
@@ -10,10 +11,9 @@ module.exports = {
 
     browser.execute("scrollTo(0,3000)");
 
-    google
-      .waitForElementVisible("@submit", 5000)
-      .click("@submit")
-      .waitForElementVisible("@logo", 5000);
+    step1.waitForElementVisible("@submit", 5000).click("@submit");
+
+    step2.waitForElementVisible("@logo", 5000);
 
     browser.end();
   }
