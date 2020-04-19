@@ -25,3 +25,8 @@ nightwatch
 ```
 nightwatch -f google.js
 ```
+
+
+### To DO:
+- use commands 
+- use sections

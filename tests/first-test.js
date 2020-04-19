@@ -2,7 +2,6 @@ module.exports = {
   "Demo test ecosia.org": function(browser) {
     browser
       .url("https://www.ecosia.org/")
-      .waitFor
       .waitForElementVisible("body")
       .assert.titleContains("Ecosia")
       .assert.visible("input[type=search]")
